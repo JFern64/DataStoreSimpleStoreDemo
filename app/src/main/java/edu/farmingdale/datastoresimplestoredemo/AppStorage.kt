@@ -37,6 +37,16 @@ class AppStorage ( private val context: Context) {
             preferences[PreferencesKeys.USERNAME] = username
         }
     }
+    suspend fun saveHighschore(highscore: Int){
+        context.dataStore.edit{ preferences ->
+            preferences[PreferencesKeys.HIGHSCORE]
+        }
+    }
+    suspend fun saveDarkMode(darkmode: Boolean){
+        context.dataStore.edit{ preferences ->
+            preferences[PreferencesKeys.DARK_MODE]
+        }
+    }
 
 
 }
